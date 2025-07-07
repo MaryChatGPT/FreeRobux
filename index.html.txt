@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Roblox Free Item</title>
+  <style>
+    body { text-align: center; background: #111; color: white; font-family: sans-serif; padding: 50px; }
+    .btn { background: #0af; color: black; padding: 20px; margin: 10px; border: none; border-radius: 10px; font-size: 18px; width: 250px; cursor: pointer; }
+    .btn:hover { background: #08c; }
+  </style>
+</head>
+<body>
+  <h1>🎁 Roblox Free Center</h1>
+  <p>เลือกสิ่งที่อยากได้เลยจ้า</p>
+
+  <button class="btn" onclick="goTo('แจก Robux')">แจก Robux</button><br>
+  <button class="btn" onclick="goTo('แจก Gamepass')">แจก Gamepass</button><br>
+  <button class="btn" onclick="goTo('แจก Pet เทพ')">แจก Pet เทพ</button><br>
+
+  <script>
+    function goTo(app) {
+      window.location.href = "form.html?app=" + encodeURIComponent(app);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ขอของ Roblox</title>
+  <style>
+    body { background: #000; color: white; text-align: center; font-family: sans-serif; padding: 40px; }
+    input, select, button {
+      padding: 12px; margin: 10px; font-size: 16px; border-radius: 8px; border: none; width: 80%; max-width: 300px;
+    }
+    button { background: #00ff88; color: black; cursor: pointer; }
+    #result { margin-top: 25px; font-size: 18px; color: #ff4444; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2 id="title">🔒 กำลังโหลด...</h2>
+  <input type="text" id="username" placeholder="ชื่อ Roblox ของคุณ"><br>
+  <select id="item">
+    <option value="800 Robux">800 Robux</option>
+    <option value="Blox Fruits Max">Blox Fruits Max</option>
+    <option value="Gamepass ฟรี">Gamepass ฟรี</option>
+    <option value="Pet ระดับตำนาน">Pet ระดับตำนาน</option>
+  </select><br>
+  <button onclick="confirm()">ยืนยัน</button>
+  <div id="result"></div>
+
+  <script>
+    const app = new URLSearchParams(window.location.search).get("app") || "แอปไม่ระบุ";
+    document.getElementById("title").innerText = "🎁 " + app;
+
+    function confirm() {
+      const user = document.getElementById("username").value || "คุณ";
+      const item = document.getElementById("item").value;
+      document.getElementById("result").innerHTML = `
+        🧾 <b>${user}</b> พยายามขอ <b>${item}</b><br><br>
+        ❌ ระบบ Roblox ตรวจจับได้ว่าคุณใช้วิธีลับ!<br>
+        🚫 บัญชีโดนแบนแบบขำๆ แล้วจ้า 😂<br>
+        <span style="color:#888">(โดนหลอกเต็มๆ!)</span>
+      `;
+    }
+  </script>
+</body>
+</html>
